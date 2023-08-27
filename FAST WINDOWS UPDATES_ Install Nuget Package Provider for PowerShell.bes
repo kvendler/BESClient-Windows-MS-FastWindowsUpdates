@@ -36,7 +36,7 @@
 				<PostLink><![CDATA[<FONT size=3> to deploy this action.</FONT>]]></PostLink>
 			</Description>
 			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell"># Enter your action script here
-Install−PackageProvider −Name Nuget −Force</ActionScript>
+Install-PackageProvider -Name Nuget -Force</ActionScript>
 			<SuccessCriteria Option="RunToCompletion"></SuccessCriteria>
 		</DefaultAction>
 	</Fixlet>
