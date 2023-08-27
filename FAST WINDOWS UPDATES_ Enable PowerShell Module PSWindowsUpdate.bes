@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>FAST WINDOWS UPDATES: Enable PowerShell Module PSWindowsUpdate</Title>
+		<Description><![CDATA[<P><FONT size=3>This Fixlet installs the PSWindowsUpdate PowerShell Module. This will facilitate leveraging PowerShell to manage Windows Updates. &nbsp;&nbsp;</FONT></P>
+<P><FONT size=3>Patching systems with this process will <STRONG>preempt the additional QA performed by HCL.</STRONG> By patching in this manner, you assume <STRONG>ALL</STRONG> risk involved with installing patches that Microsoft may subsequently revoke.</FONT></P>
+<P><FONT size=3>Installation of corrupt patches may result in a computer system that is damaged and/or loss of data. <STRONG><FONT color=#ff0000>USE OF THIS CONTENT IS DONE WITH THIS UNDERSTANDING AND ACCEPTANCE OF THIS RISK.</FONT></STRONG></FONT></P>
+<P><FONT size=3><STRONG>DEPENDENCIES:</STRONG> This Fixlet requires the presence of the Nuget Package Manager for PowerShell. </FONT></P>
+<P><FONT size=3>Windows 10/Server 2019 and older&nbsp;may not have this installed by default. To enable this on these systems, please run the Fixlet: <STRONG>FAST WINDOWS UPDATES: Install Nuget Package Provider for PowerShell</STRONG></FONT></P>]]></Description>
+		<GroupRelevance JoinByIntersection="false">
+			<SearchComponentPropertyReference PropertyName="OS" Comparison="Contains">
+				<SearchText>Win</SearchText>
+				<Relevance>exists (operating system) whose (it as string as lowercase contains "Win" as lowercase)</Relevance>
+			</SearchComponentPropertyReference>
+		</GroupRelevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2023-08-10</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Sun, 27 Aug 2023 04:37:33 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink><![CDATA[<FONT size=3>Click</FONT> ]]></PreLink>
+				<Link><![CDATA[<FONT size=3>here</FONT>]]></Link>
+				<PostLink><![CDATA[ <FONT size=3>to deploy this action.</FONT>]]></PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell"># Enter your action script here
+Install-Module PSWindowsUpdate -Force</ActionScript>
+			<SuccessCriteria Option="RunToCompletion"></SuccessCriteria>
+		</DefaultAction>
+	</Fixlet>
+</BES>

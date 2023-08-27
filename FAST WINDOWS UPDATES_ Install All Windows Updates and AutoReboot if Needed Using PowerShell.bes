@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>FAST WINDOWS UPDATES: Install All Windows Updates and AutoReboot if Needed Using PowerShell</Title>
+		<Description><![CDATA[<P><FONT size=3><STRONG>Use this content with extreme caution!</STRONG> This Fixlet will use PowerShell to download&nbsp;all available&nbsp;patch content directly from Microsoft <STRONG>as soon as Microsoft makes it available on Patch Tuesday.</STRONG> </FONT></P>
+<P><FONT size=3>Patching systems with this process will <STRONG>preempt the additional QA performed by HCL.</STRONG> By using this Fixlet, you assume <STRONG>ALL</STRONG> risk involved with installing patches that Microsoft may subsequently revoke.</FONT></P>
+<P><FONT size=3>Installation of corrupt patches may result in a computer system that is damaged and/or loss of data. <STRONG><FONT color=#ff0000>USE OF THIS CONTENT IS DONE WITH THIS UNDERSTANDING AND ACCEPTANCE OF THIS RISK.</FONT></STRONG></FONT></P>
+<P><FONT size=3>This Fixlet will use the <STRONG>PSWindowsUpdate PowerShell</STRONG> module to install <STRONG><FONT color=#ff0000>all available Windows Updates</FONT></STRONG> and&nbsp;automatically&nbsp;reboot the targeted device(s)&nbsp;if the KB requires it.&nbsp; </FONT></P>
+<P><FONT size=3><STRONG>DEPENDENCIES:</STRONG> The <STRONG>PSWindowsUpdate PowerShell</STRONG> module <STRONG>MUST</STRONG> be enabled for this Fixlet to execute successfully.</FONT></P>]]></Description>
+		<GroupRelevance JoinByIntersection="false">
+			<SearchComponentPropertyReference PropertyName="OS" Comparison="Contains">
+				<SearchText>Win</SearchText>
+				<Relevance>exists (operating system) whose (it as string as lowercase contains "Win" as lowercase)</Relevance>
+			</SearchComponentPropertyReference>
+		</GroupRelevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2023-08-10</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Sun, 27 Aug 2023 04:38:06 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink><![CDATA[<FONT size=3>Click </FONT>]]></PreLink>
+				<Link><![CDATA[<FONT size=3>here</FONT>]]></Link>
+				<PostLink><![CDATA[<FONT size=3> to deploy this action.</FONT>]]></PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell"># Use this content with extreme caution! This Fixlet will download all patch content directly from Microsoft as soon as Microsoft makes it available on Patch Tuesday. 
+# Patching systems with this process will preempt the additional QA performed by HCL. By using this Fixlet, you assume ALL risk involved with installing patches that Microsoft may subsequently revoke.
+# Installation of corrupt patches may result in a computer system that is damaged and/or loss of data. USE OF THIS CONTENT IS DONE WITH THIS UNDERSTANDING AND ACCEPTANCE OF THIS RISK.
+
+# Enter your action script here
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot</ActionScript>
+			<SuccessCriteria Option="RunToCompletion"></SuccessCriteria>
+		</DefaultAction>
+	</Fixlet>
+</BES>

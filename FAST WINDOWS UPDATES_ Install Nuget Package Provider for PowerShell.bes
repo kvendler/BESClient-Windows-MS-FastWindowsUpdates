@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>FAST WINDOWS UPDATES: Install Nuget Package Provider for PowerShell</Title>
+		<Description><![CDATA[<FONT size=3>This Fixlet installs the <STRONG>Nuget Package Provider</STRONG> for <STRONG>PowerShell.</STRONG> <STRONG>Nuget</STRONG>&nbsp;is a dependency for the installation of the <STRONG>PSWindowsUpdate</STRONG> PowerShell module on <STRONG>Microsoft Windows 10</STRONG>, <STRONG>Windows Server 2019</STRONG>, and&nbsp;<STRONG>older versions of Windows</STRONG>.</FONT> ]]></Description>
+		<GroupRelevance JoinByIntersection="false">
+			<SearchComponentPropertyReference PropertyName="OS" Comparison="Contains">
+				<SearchText>Win10</SearchText>
+				<Relevance>exists (operating system) whose (it as string as lowercase contains "Win10" as lowercase)</Relevance>
+			</SearchComponentPropertyReference>
+			<SearchComponentPropertyReference PropertyName="OS" Comparison="Contains">
+				<SearchText>Win2019</SearchText>
+				<Relevance>exists (operating system) whose (it as string as lowercase contains "Win2019" as lowercase)</Relevance>
+			</SearchComponentPropertyReference>
+			<SearchComponentPropertyReference PropertyName="OS" Comparison="Contains">
+				<SearchText>Win2016</SearchText>
+				<Relevance>exists (operating system) whose (it as string as lowercase contains "Win2016" as lowercase)</Relevance>
+			</SearchComponentPropertyReference>
+		</GroupRelevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2023-08-10</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Sun, 27 Aug 2023 04:16:50 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink><![CDATA[<FONT size=3>Click</FONT> ]]></PreLink>
+				<Link><![CDATA[<FONT size=3>here</FONT>]]></Link>
+				<PostLink><![CDATA[<FONT size=3> to deploy this action.</FONT>]]></PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell"># Enter your action script here
+Install−PackageProvider −Name Nuget −Force</ActionScript>
+			<SuccessCriteria Option="RunToCompletion"></SuccessCriteria>
+		</DefaultAction>
+	</Fixlet>
+</BES>
